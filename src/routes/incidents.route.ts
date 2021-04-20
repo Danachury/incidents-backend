@@ -19,6 +19,93 @@ const IncidentsRouter = Router()
  *        description: Incident Id
  *        in: query
  *        type: string
+ *      - name: incidentId
+ *        in: query
+ *        type: string
+ *      - name: incidentDescription
+ *        in: query
+ *        type: string
+ *      - name: brand
+ *        in: query
+ *        type: string
+ *      - name: incidentType
+ *        in: query
+ *        type: string
+ *      - name: incidentTypeAttack
+ *        in: query
+ *        type: string
+ *      - name: incidentStatus
+ *        in: query
+ *        type: string
+ *      - name: source
+ *        in: query
+ *        type: string
+ *      - name: country
+ *        in: query
+ *        type: string
+ *      - name: countryCode
+ *        in: query
+ *        type: string
+ *      - name: url
+ *        in: query
+ *        type: string
+ *      - name: elapsedTime
+ *        in: query
+ *        type: number
+ *      - name: inactiveTime
+ *        in: query
+ *        type: number
+ *      - name: incidentDate
+ *        in: query
+ *        type: string
+ *      - name: lastChecked
+ *        in: query
+ *        type: string,
+ *      - name: company
+ *        in: query
+ *        type: number,
+ *      - name: incidentTakedownStatus
+ *        in: query
+ *        type: boolean,
+ *      - name: incidentProactiveDetection
+ *        in: query
+ *        type: boolean,
+ *      - name: attachment
+ *        in: query
+ *        type: boolean,
+ *      - name: ip
+ *        in: query
+ *        type: string,
+ *      - name: domain
+ *        in: query
+ *        type: string,
+ *      - name: html
+ *        in: query
+ *        type: boolean,
+ *      - name: whois
+ *        in: query
+ *        type: string,
+ *      - name: geolocation
+ *        in: query
+ *        type: boolean,
+ *      - name: agent
+ *        in: query
+ *        type: string,
+ *      - name: reactivatedFrom
+ *        in: query
+ *        type: string,
+ *      - name: relatedIncidents
+ *        in: query
+ *        type: string,
+ *      - name: incidentLevel
+ *        in: query
+ *        type: string,
+ *      - name: incidentScore
+ *        in: query
+ *        type: number,
+ *      - name: bookmark
+ *        in: query
+ *        type: boolean,
  *     responses:
  *      200:
  *        description: Retrieve incidents list
