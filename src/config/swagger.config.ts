@@ -24,7 +24,7 @@ const options = {
       }
     ]
   },
-  apis: ['./routes/*.js']
+  apis: ['../**/*.route.js']
 }
 
-export const ApiConfig = swaggerJsdoc(options)
+export const ApiDocsConfig = swaggerJsdoc(options)

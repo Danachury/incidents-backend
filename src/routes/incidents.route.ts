@@ -12,7 +12,7 @@ const responseBody = (req: Request, status: number = 200, msg?: string) => {
 
 /**
  * @swagger
- * /incidents:
+ * /poc-ib/api/v1/incidents:
  *   get:
  *     summary: Health Check
  *     description: Check if server is up!
