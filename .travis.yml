@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - '14.15.4'
+install:
+  - npm install
+deploy:
+  provider: heroku
+  api_key:
+    secure: EnuwU63H2Gu/v880oLXGQ3nGaW2FNNMblP4q9wff+BThSNT8eKc9ddI6WsxZRi7b/K7ZUlPGufkpLB6wgv6N4z3R59mwAS7El2oL4/G1sy91vXpzpMIzKWIRYvwD19/BDafAE5Urz/r5VUA69cAt9K7BmPBvutejbS1Rt/swV4fu/CpsS6hedtCRmk1iVL8d2PfG5JIybmpAlnV5VVV/M7zvGKqUcNgpoJF7nktMAPTARrm48Qb+O6oMX+2TTh5JQIZBkTLbXUAGiUqMTkPm81hQIFKAyqfjqwnUfUz2V+AmU6XA/peQLWmbROkJsiqrL7lHJaEQ7/pl+5JPnkNVowfyCGoRZB0e0Udkk6UAR2v6khlVRLfEParrXeSgCDOz0FafPVU3jM5MHYIq2hcOOC4Ys3cijwtayQlpftQBeG/iBpvlxUx4pb80ByPkKx01MZY3d2YuOSXHxCRGN5+6HFfBtBppsuQszTKeJxNXIM3jcefIeF+WxyqTYxArEAk+iwZzkByTtE/k1kmYhZTNDft4PU7rT9VA505yJYBuhUpzRhP8IwV3AFktn/wtohEQfw+2FAMbUypp5L3z27LqCcm4ICXKlrBbiOyyhx0KNokSL0MC/SBdbQex7d+kePKqBQPVISfVXUYvPJnmxId8Gkne1LKablezshYbsAPriBE=
+  app: poc-incidents-backend
+  on:
+    repo: Danachury/poc-incidents_backend
