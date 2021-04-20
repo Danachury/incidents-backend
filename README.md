@@ -1,26 +1,39 @@
-# GWord Backend
+# POC Incidents Backend
+
+Incidents REST and Streaming code. Using Mongo as datasource.
 
 ## Start in dev mode
-We Assume that [NodeJs](https://nodejs.org) is installed in your machine.
+
+We Assume that [NodeJs 14](https://nodejs.org) is installed in your machine.
 
 Install dependencies:
+
 ```
 npm install
 ```
 
 Start server:
+
 ```
 npm start
 ```
 
-Dev Start server: Restart server automatically when detect a change in the source (`src/`) code
+## Docker startup
+
+Starts the `App` and `Database`:
+
 ```
-npm run startdev
+docker-compose -f .ops/docker-compose.yml up -d
 ```
 
-To stop server you should use ``CTRL+C`` command
+Starts `Database` only:
 
-## Unit Tests
 ```
-npm test
+docker-compose -f .ops/docker-compose.yml up -d database
+```
+
+Stop and Remove Docker Containers:
+
+```
+docker-compose -f .ops/docker-compose.yml down --rmi local
 ```
