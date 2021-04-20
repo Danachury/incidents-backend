@@ -1,7 +1,9 @@
+import { AppConfig } from './app.config'
+
 const mongoose = require('mongoose')
 
 mongoose
-  .connect('mongodb+srv://incuser:5MLlFPmeP5zoZ3VK@incidents.oek60.mongodb.net/poc?retryWrites=true&w=majority', {
+  .connect(`mongodb+srv://${AppConfig.DB_USER}:${AppConfig.DB_PASS}@incidents.oek60.mongodb.net/${AppConfig.DB_NAME}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
