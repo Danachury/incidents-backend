@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/bin/www.js",
   "scripts": {
-    "start": "tsc && node dist/bin/www.js"
+    "start": "tsc && node dist/bin/www.js",
+    "preinstall": "tsc"
   },
   "keywords": [],
   "author": "",
