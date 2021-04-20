@@ -37,3 +37,7 @@ Stop and Remove Docker Containers:
 ```
 docker-compose -f .ops/docker-compose.yml down --rmi local
 ```
+
+## API Documentation
+
+You can find API's documentation after starting `App` at: ``http://localhost:3000/docs``
