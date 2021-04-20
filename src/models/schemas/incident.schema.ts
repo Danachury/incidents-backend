@@ -1,7 +1,6 @@
 import * as mongoose from 'mongoose'
 
 export const IncidentSchema = new mongoose.Schema({
-  id: { type: Number, unique: true },
   incidentId: String,
   incidentDescription: String,
   brand: String,

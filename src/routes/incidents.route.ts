@@ -122,9 +122,8 @@ const IncidentsRouter = Router()
  *                  example: /poc-ib/api/v1/incidents
  *                data:
  *                  type: object
- *                  example: [{
- *
- *                  }]
+ *                  description: Incident object
+ *                  example: [{}]
  *      204:
  *        description: There is not data for current params
  *        content:
