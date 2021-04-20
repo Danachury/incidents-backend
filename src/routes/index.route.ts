@@ -16,6 +16,15 @@ const responseBody = (req: Request) => {
  *   get:
  *     summary: Health Check
  *     description: Check if server is up!
+ *     tags:
+ *      - Health Check
+ *     produces:
+ *      - application/json
+ *     responses:
+ *      200:
+ *        description: Service is running.
+ *      500:
+ *        description: Unknown Error, some configuration should be added by administrator.
  */
 IndexRouter.get('/', (req: Request, res: Response) =>
   res.status(200).json(responseBody(req))
