@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  app:
+    container_name: poc-incidents_backend
+    build:
+      context: ../
+      dockerfile: .ops/Dockerfile
+    tty: true
+    ports:
+      - 3000:3000/tcp
+    environment:
+      PORT: 3000
+      PROFILE: dev
+      DB_HOST: poc-incidents_backend_database
+      DB_PORT: 27017
+      DB: gword
+      DB_USER: incuser
+      DB_PASS: incuser-2021!*
+    depends_on:
+      - database
+    networks:
+      - poc-incidents_backend
+
+  database:
+    image: mongo
+    container_name: poc-incidents_backend_database
+    restart: always
+    ports:
+      - 27017:27017/tcp
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: incuser
+      MONGO_INITDB_ROOT_PASSWORD: incuser-2021!*
+      MONGO_INITDB_DATABASE: poc
+    volumes:
+      - ./mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    networks:
+      - poc-incidents_backend
+
+networks:
+  poc-incidents_backend:
+    driver: bridge

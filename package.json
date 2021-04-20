@@ -1,0 +1,27 @@
+{
+  "name": "poc-incidents_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/bin/www.js",
+  "scripts": {
+    "start": "tsc && node dist/bin/www.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "tslint": "^6.1.3",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "debug": "^2.6.9",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.5",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}

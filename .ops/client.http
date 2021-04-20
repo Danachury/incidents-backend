@@ -1,0 +1,11 @@
+GET http://localhost:3000/books?
+ version=niv
+ &name=EXoDus
+Accept: application/json
+
+###
+GET http://localhost:3000/quote?
+ version=niv
+ &book=gn
+ &search=In the beginning God created the heavens and the earth.
+Accept: application/json
