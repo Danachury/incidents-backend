@@ -1,14 +1,6 @@
 import { Request, Response, Router } from 'express'
-import { AppConfig } from '../config/app.config'
 
 const IndexRouter = Router()
-const responseBody = (req: Request) => {
-  return {
-    status: 200,
-    message: `${AppConfig.APP_NAME} is working!`,
-    path: req.originalUrl
-  }
-}
 
 /**
  * @openapi
@@ -23,11 +15,29 @@ const responseBody = (req: Request) => {
  *     responses:
  *      200:
  *        description: Service is running.
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                status:
+ *                  type: integer
+ *                  example: 200
+ *                path:
+ *                  type: string
+ *                  example: /
+ *                message:
+ *                  type: string
+ *                  example: App is running correctly!
  *      500:
  *        description: Unknown Error, some configuration should be added by administrator.
  */
 IndexRouter.get('/', (req: Request, res: Response) =>
-  res.status(200).json(responseBody(req))
+  res.status(200).json({
+    status: 200,
+    message: `App is running correctly!`,
+    path: req.originalUrl
+  })
 )
 
 export default IndexRouter

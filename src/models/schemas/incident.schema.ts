@@ -15,7 +15,7 @@ export const IncidentSchema = new mongoose.Schema({
   elapsedTime: Number,
   inactiveTime: Number,
   incidentDate: String,
-  last_checked: String,
+  lastChecked: String,
   company: Number,
   incidentTakedownStatus: Boolean,
   incidentProactiveDetection: Boolean,

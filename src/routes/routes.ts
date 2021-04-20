@@ -14,8 +14,6 @@ const Routes = Router()
 Routes.use(`/`, IndexRouter)
 Routes.use(`${AppConfig.APP_CONTEXT}/api/v1/incidents`, IncidentsRouter)
 
-console.log(ApiDocsConfig)
-
 /**
  * Server Documentation setup
  */
