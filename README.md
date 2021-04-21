@@ -23,7 +23,7 @@ npm start
 Starts the `App` and `Database`:
 
 ```
-docker-compose -f .ops/docker-compose.yml up -d
+docker-compose -f .ops/docker-compose.yml up --build -d
 ```
 
 Starts `Database` only:

@@ -3,6 +3,8 @@ node_js:
   - '14.15.4'
 install:
   - npm install
+build:
+  - npm run build
 deploy:
   provider: heroku
   api_key:

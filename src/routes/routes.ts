@@ -12,7 +12,7 @@ const Routes = Router()
  * Routes indexed to server
  */
 Routes.use(`/`, IndexRouter)
-Routes.use(`${AppConfig.APP_CONTEXT}/api/v1/incidents`, IncidentsRouter)
+Routes.use(`${AppConfig.CONTEXT}/api/v1/incidents`, IncidentsRouter)
 
 /**
  * Server Documentation setup

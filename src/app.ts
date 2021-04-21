@@ -8,7 +8,7 @@ require('./config/mongo.config')
 
 const App = express()
 
-App.use(logger(AppConfig.APP_LOG_FORMAT))
+App.use(logger(AppConfig.LOGGER_FORMAT))
 App.use(express.json())
 App.use(express.urlencoded({ extended: false }))
 App.use(cookieParser())

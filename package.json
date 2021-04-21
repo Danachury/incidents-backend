@@ -1,10 +1,11 @@
 {
   "name": "poc-incidents_backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "POC Incidents Backend",
   "main": "dist/bin/www.js",
   "scripts": {
-    "start": "tsc && node dist/bin/www.js"
+    "start": "NODE_PATH=./dist && node dist/bin/www.js",
+    "build": "tsc -p ."
   },
   "keywords": [],
   "author": "",

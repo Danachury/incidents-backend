@@ -1,15 +1,14 @@
-FROM node:14.15-alpine
+FROM node:14 as base
 
 WORKDIR /poc-incidents_backend
-
-COPY src/ /poc-incidents_backend/src/
-COPY bin/ /poc-incidents_backend/bin/
 COPY package*.json /poc-incidents_backend/
+RUN npm install --production
+COPY . /poc-incidents_backend/
 
-RUN npm install && \
-    npm ci --only=production
+FROM base as production
 
-ENV PORT 3000
-EXPOSE 3000
+ENV NODE_PATH=./dist
 
-CMD ["node", "/poc-incidents_backend/bin/www"]
+RUN npm run build
+
+CMD ["node", "/poc-incidents_backend/dist/bin/www.js"]

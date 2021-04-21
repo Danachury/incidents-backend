@@ -8,13 +8,13 @@ import App from '../src/app'
 import http from 'http'
 import { AppConfig } from '../src/config/app.config'
 
-AppConfig.setEnvVar('DEBUG', AppConfig.APP_DEBUG)
+AppConfig.setEnvVar('DEBUG', AppConfig.DEBUG)
 
 /**
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(AppConfig.APP_PORT)
+const port = normalizePort(AppConfig.PORT)
 App.set('port', port)
 
 /**
