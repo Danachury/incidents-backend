@@ -11,4 +11,5 @@ deploy:
     secure: fea5df45-0b0c-48d8-987f-79b6e621ce78
   app: poc-incidents-backend
   on:
+    all_branches: true
     repo: Danachury/poc-incidents_backend
