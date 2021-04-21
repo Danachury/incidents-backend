@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   app:
-    container_name: poc-incidents_backend
+    container_name: incidents-backend
     build:
       context: ../
       dockerfile: .ops/Dockerfile
@@ -11,7 +11,7 @@ services:
     environment:
       PORT: 3000
       PROFILE: dev
-      DB_HOST: poc-incidents_backend_database
+      DB_HOST: incidents-backend_database
       DB_PORT: 27017
       DB: gword
       DB_USER: incuser
@@ -19,11 +19,11 @@ services:
     depends_on:
       - database
     networks:
-      - poc-incidents_backend
+      - incidents-backend
 
   database:
     image: mongo
-    container_name: poc-incidents_backend_database
+    container_name: incidents-backend_database
     restart: always
     ports:
       - 27017:27017/tcp
@@ -34,8 +34,8 @@ services:
     volumes:
       - ./mongodb/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
     networks:
-      - poc-incidents_backend
+      - incidents-backend
 
 networks:
-  poc-incidents_backend:
+  incidents-backend:
     driver: bridge

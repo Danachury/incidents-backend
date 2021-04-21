@@ -1,5 +1,5 @@
 {
-  "name": "poc-incidents_backend",
+  "name": "incidents-backend",
   "version": "1.0.0",
   "description": "POC Incidents Backend",
   "main": "dist/bin/www.js",
