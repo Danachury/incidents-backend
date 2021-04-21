@@ -1,10 +1,10 @@
-FROM node:14.15-alpine as base
+FROM node:14.16-alpine as base
 
-WORKDIR /incidents-backend
-COPY package*.json /incidents-backend/
+WORKDIR /app
+COPY package*.json ./
 RUN npm install && \
     npm ci --only=production
-COPY . /incidents-backend/
+COPY . .
 
 FROM base as production
 
@@ -12,4 +12,4 @@ ENV NODE_PATH=./dist
 
 RUN npm run build
 
-CMD ["node", "/incidents-backend/dist/bin/www.js"]
+CMD ["node", "./dist/bin/www.js"]

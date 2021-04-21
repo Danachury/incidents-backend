@@ -2,6 +2,10 @@
   "name": "incidents-backend",
   "version": "1.0.0",
   "description": "POC Incidents Backend",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Danachury/incidents-backend.git"
+  },
   "main": "dist/bin/www.js",
   "scripts": {
     "start": "node dist/bin/www.js",
@@ -9,8 +13,12 @@
     "tsc": "tsc -p .",
     "test": "echo 'Not tests for now'"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "incidents",
+    "streaming",
+    "express"
+  ],
+  "author": "Denilson Anachury <denilsoncastro1997@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",

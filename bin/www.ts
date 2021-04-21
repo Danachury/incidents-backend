@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// noinspection ES6PreferShortImport
 
 /**
  * Module dependencies.
@@ -33,10 +34,9 @@ server.on('error', onError)
 server.on('listening', onListening)
 
 /**
- * Normalize a port into a number, string, or undefined.
+ * Normalize a port into a number, string, or null.
  */
-
-function normalizePort(val: string) {
+function normalizePort(val: string): number | string | null {
   const p: number = parseInt(val, 10)
 
   if (isNaN(p)) {
@@ -57,9 +57,8 @@ function normalizePort(val: string) {
  */
 
 function onError(error: any) {
-  if (error.syscall !== 'listen') {
+  if (error.syscall !== 'listen')
     throw error
-  }
 
   const bind = typeof port === 'string'
                ? 'Pipe ' + port
@@ -91,7 +90,7 @@ function onListening() {
     process.exit(1)
   }
   const bind = typeof addr === 'string'
-               ? `pipe ${addr}`
-               : `port ${addr.port}`
+               ? `Pipe ${addr}`
+               : `Port ${addr.port}`
   logger.info(`Listening on ${bind}`)
 }

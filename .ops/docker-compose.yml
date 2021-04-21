@@ -10,12 +10,11 @@ services:
       - 3000:3000/tcp
     environment:
       PORT: 3000
-      PROFILE: dev
-      DB_HOST: incidents-backend_database
-      DB_PORT: 27017
-      DB: gword
+      CONTEXT: /poc-ib
       DB_USER: incuser
-      DB_PASS: incuser-2021!*
+      DB_PASS: 5MLlFPmeP5zoZ3VK
+      DB_HOST: incidents.oek60.mongodb.net
+      DB_NAME: poc
     depends_on:
       - database
     networks:
@@ -23,7 +22,7 @@ services:
 
   database:
     image: mongo
-    container_name: incidents-backend_database
+    container_name: incidents-backend-database
     restart: always
     ports:
       - 27017:27017/tcp
