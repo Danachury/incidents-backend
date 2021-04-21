@@ -1,8 +1,9 @@
-FROM node:14 as base
+FROM node:14.15-alpine as base
 
 WORKDIR /incidents-backend
 COPY package*.json /incidents-backend/
-RUN npm install --production
+RUN npm install && \
+    npm ci --only=production
 COPY . /incidents-backend/
 
 FROM base as production
