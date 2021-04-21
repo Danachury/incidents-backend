@@ -6,6 +6,7 @@
   "scripts": {
     "start": "NODE_PATH=./dist && node dist/bin/www.js",
     "build": "tsc -p .",
+    "postinstall": "npm run tsc",
     "test": "echo 'Not tests for now'"
   },
   "keywords": [],
