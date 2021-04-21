@@ -9,5 +9,5 @@ export class AppConfig {
   static DB_NAME = 'poc'
 
   static setEnvVar = (name: string, value: string) =>
-    console.log('Here should be environment variable set...')
+    process.env[name] = value
 }

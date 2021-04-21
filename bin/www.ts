@@ -7,8 +7,9 @@
 import App from '../src/app'
 import http from 'http'
 import { AppConfig } from '../src/config/app.config'
+import { Logger } from '../src/util/logging/logger'
 
-AppConfig.setEnvVar('DEBUG', AppConfig.DEBUG)
+const logger = new Logger('www')
 
 /**
  * Get port from environment and store in Express.
@@ -36,19 +37,19 @@ server.on('listening', onListening)
  */
 
 function normalizePort(val: string) {
-  const port = parseInt(val, 10)
+  const p: number = parseInt(val, 10)
 
-  if (isNaN(port)) {
+  if (isNaN(p)) {
     // named pipe
     return val
   }
 
-  if (port >= 0) {
+  if (p >= 0) {
     // port number
-    return port
+    return p
   }
 
-  return undefined
+  return null
 }
 
 /**
@@ -67,11 +68,11 @@ function onError(error: any) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges')
+      logger.error(bind + ' requires elevated privileges')
       process.exit(1)
       break
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use')
+      logger.error(bind + ' is already in use')
       process.exit(1)
       break
     default:
@@ -86,11 +87,11 @@ function onError(error: any) {
 function onListening() {
   const addr = server.address()
   if (!addr) {
-    console.error(`Cannot start server. Address not valid!`)
+    logger.error(`Cannot start server. Address not valid!`)
     process.exit(1)
   }
   const bind = typeof addr === 'string'
                ? `pipe ${addr}`
                : `port ${addr.port}`
-  console.info(`Listening on ${bind}`)
+  logger.info(`Listening on ${bind}`)
 }

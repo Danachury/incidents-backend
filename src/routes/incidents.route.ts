@@ -178,7 +178,7 @@ IncidentsRouter.get('/', (req: Request, res: Response) => {
     if (!!err)
       return internalServerError(req, res)
     else
-      res.json(incidents)
+      return res.json(incidents)
   })
 })
 

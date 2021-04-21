@@ -12,7 +12,8 @@
     "quotemark": {
       "options": "single",
       "severity": "warn"
-    }
+    },
+    "no-empty-interface": false
   },
   "rulesDirectory": []
 }

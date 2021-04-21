@@ -1,17 +1,15 @@
 import { AppConfig } from './app.config'
+import mongoose from 'mongoose'
+import { Logger } from '../util/logging/logger'
 
-const mongoose = require('mongoose')
+const logger = new Logger('mongo.config')
 
 mongoose
   .connect(`mongodb+srv://${AppConfig.DB_USER}:${AppConfig.DB_PASS}@${AppConfig.DB_HOST}/${AppConfig.DB_NAME}?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
-  .then(() => console.log('Connected to database...'))
-  .catch((err: any) => console.error(err))
+  .then(() => logger.info('Connection to Mongo opened...'))
+  .catch((err: any) => logger.error(err))
 
 export const db = mongoose.connection
-db.on('error', console.error.bind(console, 'connection error:'))
-db.once('open', () => {
-  console.log('Connection opened...')
-})
