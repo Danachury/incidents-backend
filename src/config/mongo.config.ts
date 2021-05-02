@@ -4,19 +4,31 @@ import { Logger } from '../util/logging/logger'
 
 const logger = new Logger('mongo.config')
 
-mongoose
-  .connect(`mongodb+srv://${AppConfig.DB_USER}:${AppConfig.DB_PASS}@${AppConfig.DB_HOST}/${AppConfig.DB_NAME}?retryWrites=true&w=majority`, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => logger.info('Connection to Mongo opened...'))
-  .catch((err: any) => logger.error(err))
+export class Mongo {
 
-process.on('exit', () => {
-  logger.info('Closing Mongo Connection..')
-  mongoose.connection.close(true, err => {
-    logger.error('Cannot close Mongo connection', err)
-  })
-})
+  private static USER = AppConfig.DB_USER
+  private static PASS = AppConfig.DB_PASS
+  private static HOST = AppConfig.DB_HOST
+  private static DBNAME = AppConfig.DB_NAME
 
-export const db = mongoose.connection
+  static connect(): void {
+    mongoose
+      .connect(this.uri(), {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      })
+      .then(() => logger.info(`Connected to Mongo, Url: ${this.HOST}`))
+      .catch((err: any) => logger.error(err))
+  }
+
+  static close(force: boolean = true): void {
+    mongoose.connection.close(force, err => {
+      logger.error('Cannot close Mongo connection', err)
+    })
+  }
+
+  private static uri(): string {
+    const params = 'retryWrites=true&w=majority'
+    return `mongodb+srv://${this.USER}:${this.PASS}@${this.HOST}/${this.DBNAME}?${params}`
+  }
+}

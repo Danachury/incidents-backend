@@ -3,8 +3,9 @@ import express from 'express'
 import morgan from 'morgan'
 import Routes from './routes/routes'
 
-import('./config/mongo.config')
+import { Mongo } from './config/mongo.config'
 
+Mongo.connect()
 const App = express()
 
 App.use(morgan('dev'))
