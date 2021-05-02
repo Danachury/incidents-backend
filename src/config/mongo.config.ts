@@ -12,4 +12,11 @@ mongoose
   .then(() => logger.info('Connection to Mongo opened...'))
   .catch((err: any) => logger.error(err))
 
+process.on('exit', () => {
+  logger.info('Closing Mongo Connection..')
+  mongoose.connection.close(true, err => {
+    logger.error('Cannot close Mongo connection', err)
+  })
+})
+
 export const db = mongoose.connection

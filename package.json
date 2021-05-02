@@ -8,7 +8,7 @@
   },
   "main": "dist/bin/www.js",
   "scripts": {
-    "start": "node dist/bin/www.js",
+    "start": "tsc -p . && node dist/bin/www.js",
     "build": "npm run tsc",
     "tsc": "tsc -p .",
     "test": "echo 'Not tests for now'"
@@ -18,7 +18,10 @@
     "streaming",
     "express"
   ],
-  "author": "Denilson Anachury <denilsoncastro1997@gmail.com>",
+  "author": {
+    "name": "Denilson Anachury",
+    "email": "denilsoncastro1997@gmail.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",

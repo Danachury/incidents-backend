@@ -8,13 +8,13 @@ We Assume that [NodeJs 14](https://nodejs.org) is installed in your machine.
 
 Install dependencies:
 
-```
+```shell
 npm install
 ```
 
 Start server:
 
-```
+```shell
 npm start
 ```
 
@@ -22,19 +22,19 @@ npm start
 
 Starts the `App` and `Database`:
 
-```
+```shell
 docker-compose -f .ops/docker-compose.yml up --build -d
 ```
 
 Starts `Database` only:
 
-```
+```shell
 docker-compose -f .ops/docker-compose.yml up -d database
 ```
 
 Stop and Remove Docker Containers:
 
-```
+```shell
 docker-compose -f .ops/docker-compose.yml down --rmi local
 ```
 
